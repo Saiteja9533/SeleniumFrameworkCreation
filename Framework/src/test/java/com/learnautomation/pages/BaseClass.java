@@ -11,11 +11,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.learnautomation.utility.BrowserFactory;
 import com.learnautomation.utility.ConfigDataProvider;
 import com.learnautomation.utility.ExcelDataProvider;
@@ -41,7 +40,7 @@ public class BaseClass {
 		
 		reportPath=System.getProperty("user.dir")+"/Reports/FreeCRM_"+Helper.getCurrentDateTime()+".html";
 		
-		ExtentHtmlReporter extent=new ExtentHtmlReporter(new File(reportPath));
+		ExtentSparkReporter extent=new ExtentSparkReporter(new File(reportPath));
 		report=new ExtentReports();
 		report.attachReporter(extent);
 		
